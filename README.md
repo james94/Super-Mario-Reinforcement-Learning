@@ -60,6 +60,25 @@ conda activate super-mario-r1
 
 For other useful conda commands, refer to [setup reference](docs/setup/reference.md).
 
+I need to add my conda environment to PYTHONPATH and then add PYTHONPATH to jupyter environment:
+
+~~~bash
+# Update PYTHONPATH with folder paths to modules used in inference notebook
+export PYTHONPATH="${PYTHONPATH}:/home/james/miniconda3/envs/cmpe260_dev"
+
+# Update jupyter kernel list's PYTHONPATH
+# Get location of kernel.json
+jupyter kernelspec list
+
+# Open kernel.json in code
+vim /opt/conda/share/jupyter/kernels/python3/kernel.json
+
+# In kernel.json after "language", Add an "env": element consisting of environment variables you wish to include in this kernel's environment
+"env": {
+    "PYTHONPATH": "${PYTHONPATH}:/home/james/miniconda3/envs/cmpe260_dev"
+}
+~~~
+
 
 
 Code Style
