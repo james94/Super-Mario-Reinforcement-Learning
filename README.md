@@ -63,6 +63,8 @@ For other useful conda commands, refer to [setup reference](docs/setup/reference
 I need to add my conda environment to PYTHONPATH and then add PYTHONPATH to jupyter environment:
 
 ~~~bash
+# NOTE: If I install jupyter in the conda env,jupyter should have access to the new installed libs
+
 # Update PYTHONPATH with folder paths to modules used in inference notebook
 export PYTHONPATH="${PYTHONPATH}:/home/james/miniconda3/envs/cmpe260_dev"
 
